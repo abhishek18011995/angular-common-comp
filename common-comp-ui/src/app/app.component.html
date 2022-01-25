@@ -1,0 +1,21 @@
+<header>
+  <ul style="list-style: none;cursor: pointer;">
+    <li routerLink="/"> Home</li>
+    <li routerLink="test/a">Test A</li>
+    <li routerLink="test/b">Test B</li>
+  </ul>
+</header>
+
+
+<form #weatherForm="ngForm" (submit)="getStateAlert(weatherForm.form.controls['stateName']?.value)">
+  <input name="stateName" ngModel>
+  <button type="submit">Submit</button>
+</form>
+
+
+<h1>Hello Abhi!</h1>
+
+<router-outlet></router-outlet>
+
+<section>{{apiResp?.title}}</section>
+<section>{{apiResp | json}}</section>
