@@ -21,18 +21,19 @@ export class AppComponent implements OnInit {
     swUpdate: SwUpdate
   ) {
     console.log('----Environment---- ', environment);
-    console.log('sw initiated v9');
+    console.log('sw initiated v17');
 
     if (swUpdate.isEnabled) {
       const appIsStable$ = appRef.isStable.pipe(
         first((isStable) => isStable === true)
       );
-      const everySixHours$ = interval(1 * 60 * 1000);
+      const everySixHours$ = interval(1 * 60 * 60 * 1000);
       const everySixHoursOnceAppIsStable$ = concat(
         appIsStable$,
         everySixHours$
       );
 
+      // This is for checking if any updates are available and if it is then it will automatically call for version update event based on timer set
       everySixHoursOnceAppIsStable$.subscribe(() => {
         console.log('interval started');
         swUpdate
@@ -83,7 +84,7 @@ export class AppComponent implements OnInit {
     this.getStateAlert();
   }
 
-  getStateAlert(stateName: string = 'DC') {
+  getStateAlert(stateName: string = 'AL') {
     const state = 'AL';
     console.log(stateName);
     const url = `https://api.weather.gov/alerts/active?area=${stateName}`;
