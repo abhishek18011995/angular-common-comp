@@ -28,8 +28,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 
-##################################################### PWA ######################################################
-######################################### Steps to use Service-Worker ###########################################
+## ##################################################### PWA ######################################################
+## ######################################### Steps to use Service-Worker ##########################################
 ## Note: 
 
 Service-worker will only work with when Angular projecct is build not during compilation.
