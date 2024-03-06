@@ -5,6 +5,11 @@ import { TooltipComponent } from './tooltip/tooltip.component';
   selector: '[appTooltip]',
 })
 export class TooltipDirective {
+
+// Reference of the tooltip
+// https://accesto.com/blog/how-to-create-angular-tooltip-directive/ 
+
+
   @Input() tooltip = '';
 
   private componentRef: ComponentRef<any>;
